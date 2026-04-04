@@ -1,12 +1,269 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your App Title</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nationwide Detailing | Premium Auto Detailing Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: #0f3460;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #e94560;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1607861716497-10e2d0fd6e7b?w=1200');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero .btn {
+            display: inline-block;
+            background-color: #e94560;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .hero .btn:hover {
+            background-color: #c72a48;
+        }
+
+        /* Services Section */
+        .services {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services h2 {
+            margin-bottom: 2rem;
+            color: #1a1a2e;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #e94560;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .about h2 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #1a1a2e;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact a {
+            color: #e94560;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #16213e;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🚗 Nationwide Detailing</h1>
+        <p>Premium Auto Detailing Services Across the Country</p>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="hero">
+            <h2>Your Car Deserves the Best</h2>
+            <p>Professional detailing services delivered to your doorstep. We come to you!</p>
+            <a href="#contact" class="btn">Book Now</a>
+        </section>
+
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>✨ Exterior Wash</h3>
+                    <p>Thorough hand wash, wax, and shine to make your car look brand new.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🧼 Interior Detailing</h3>
+                    <p>Deep cleaning of seats, carpets, dashboard, and all interior surfaces.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🔧 Ceramic Coating</h3>
+                    <p>Long-lasting protection with premium ceramic coating application.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🚘 Paint Correction</h3>
+                    <p>Remove swirl marks, scratches, and restore your paint's original luster.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Nationwide Detailing</h2>
+            <p>With over 10 years of experience, Nationwide Detailing is your trusted partner for professional auto detailing. We use only the highest quality products and techniques to ensure your vehicle looks its absolute best.</p>
+            <p>Our mobile service means we come to your home or office — no need to wait in line at a shop. We're fully insured and stand behind every detail.</p>
+            <p style="margin-top: 1rem;"><strong>📍 Serving nationwide with local certified professionals</strong></p>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>📞 Contact Us</h2>
+            <p>Ready to give your car the treatment it deserves?</p>
+            <p>📧 <a href="mailto:hello@nationwidedetailing.works">hello@nationwidedetailing.works</a></p>
+            <p>📱 <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+            <p>⏰ Mon-Sat: 8am - 6pm | Sunday: Closed</p>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Nationwide Detailing. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Professional Auto Detailing Services</p>
+    </footer>
+</body>
 </html>
